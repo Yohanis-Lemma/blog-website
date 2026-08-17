@@ -1,69 +1,177 @@
-import Image from "next/image";
-
 export default function Home() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      {/* Navigation */}
+      <nav>
+        <div className="nav-container">
+          <a href="#home" className="logo">
+            Health<span>Blog</span>
+          </a>
+
+          <div className="nav-links">
+            <a href="#home">Home</a>
+            <a href="#articles">Articles</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      <main id="home">
+        {/* Hero Section */}
+        <section className="hero">
+          <p className="hero-tag">HEALTH • WELLNESS • MEDICINE</p>
+
+          <h1>Your Guide to Better Health</h1>
+
+          <p className="hero-description">
+            Discover reliable and easy-to-understand information about health,
+            medicine, wellness, and healthy living.
+          </p>
+
+          <a href="#articles" className="hero-button">
+            Explore Articles
+          </a>
+        </section>
+
+        {/* Articles Section */}
+        <section id="articles" className="articles-section">
+          <div className="section-heading">
+            <p>OUR LATEST CONTENT</p>
+
+            <h2>Latest Health Articles</h2>
+
+            <span>
+              Explore useful information to help you understand and improve
+              your health.
+            </span>
+          </div>
+
+          <div className="articles">
+            {/* Diabetes Article */}
+            <article>
+              <div className="article-icon">🩺</div>
+
+              <h3>Understanding Diabetes</h3>
+
+              <p>
+                Learn about the causes, symptoms, prevention, and management
+                of diabetes.
+              </p>
+
+              <a href="/articles/diabetes" className="read-more">
+                Read More →
+              </a>
+            </article>
+
+            {/* Anemia Article */}
+            <article>
+              <div className="article-icon">🩸</div>
+
+              <h3>Understanding Anemia</h3>
+
+              <p>
+                Learn about the different types, causes, symptoms, and
+                treatment of anemia.
+              </p>
+
+              <a href="/articles/anemia" className="read-more">
+                Read More →
+              </a>
+            </article>
+
+            {/* Healthy Living Article */}
+            <article>
+              <div className="article-icon">❤️</div>
+
+              <h3>Healthy Living</h3>
+
+              <p>
+                Discover simple habits that can help you live a healthier,
+                happier, and more active life.
+              </p>
+
+              <a href="/articles/healthy-living" className="read-more">
+                Read More →
+              </a>
+            </article>
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section id="about" className="about">
+          <div className="about-content">
+            <div>
+              <p className="section-tag">ABOUT US</p>
+
+              <h2>Health Information Made Simple</h2>
+
+              <p>
+                Health Blog is dedicated to sharing clear and useful information
+                about health, medicine, wellness, and healthy living.
+              </p>
+
+              <p>
+                Our goal is to make health topics easier to understand and
+                encourage people to make informed decisions about their
+                well-being.
+              </p>
+            </div>
+
+            <div className="about-box">
+              <h3>Our Mission</h3>
+
+              <p>
+                To provide accessible health education and promote healthier
+                lifestyles through useful and understandable articles.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="contact">
+          <h2>Stay Connected</h2>
+
+          <p>
+            Follow Health Blog for more articles, health information, and
+            healthy living tips.
+          </p>
+
+          <a href="mailto:contact@healthblog.com" className="contact-button">
+            Contact Us
+          </a>
+        </section>
+
+        {/* Disclaimer */}
+        <section className="disclaimer">
+          <h3>Important Health Information</h3>
+
+          <p>
+            The information provided on this website is for educational purposes
+            only and should not replace professional medical advice, diagnosis,
+            or treatment. Always consult a qualified healthcare professional
+            regarding your health.
+          </p>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer>
+        <div className="footer-content">
+          <h2>
+            Health<span>Blog</span>
+          </h2>
+
+          <p>Learn. Understand. Live Healthier.</p>
+
+          <p className="copyright">
+            © {currentYear} Health Blog. All rights reserved.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </footer>
+    </>
   );
 }
