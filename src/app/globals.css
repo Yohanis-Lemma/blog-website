@@ -293,3 +293,75 @@ main {
     margin-top: 40px;
   }
 }
+.contact {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 50px 30px;
+  text-align: center;
+  border-radius: 16px;
+  background: #f5f7fa;
+}
+
+.contact h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.contact p {
+  color: #555;
+  margin-bottom: 35px;
+  font-size: 18px;
+}
+
+.contact-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.contact-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 22px;
+  border-radius: 12px;
+
+  background: #ffffff;
+  color: #222;
+
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+}
+
+.contact-button span {
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.contact-button:hover {
+  transform: translateY(-4px);
+}
+
+.booking-button {
+  background: #e74c3c;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .contact-links {
+    grid-template-columns: 1fr;
+  }
+
+  .contact {
+    margin: 40px 15px;
+    padding: 35px 20px;
+  }
+}
